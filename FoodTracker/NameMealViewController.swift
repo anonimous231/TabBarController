@@ -2,8 +2,8 @@
 //  NameMealViewController.swift
 //  FoodTracker
 //
-//  Created by José Ángel on 17/4/18.
-//  Copyright © 2018 José Negrillo. All rights reserved.
+//  Created by Anonymous on 17/4/18.
+//  Copyright © 2018 Anonymous. All rights reserved.
 //
 
 import UIKit

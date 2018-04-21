@@ -2,8 +2,8 @@
 //  Meal.swift
 //  FoodTracker
 //
-//  Created by José Negrillo on 30/01/2018.
-//  Copyright © 2018 José Negrillo. All rights reserved.
+//  Created by Anonymous on 30/01/2018.
+//  Copyright © 2018 Anonymous. All rights reserved.
 //
 
 import UIKit
