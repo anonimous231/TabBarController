@@ -9,11 +9,11 @@
 import UIKit
 import os.log
 
-class NameMealViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate {
+class NameMealViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var nameTextField: UITextField!
-    var photoImageView: UIImageView!
-    var ratingControl: RatingControl!
+    @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var ratingControl: RatingControl!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     var meal: Meal?
@@ -26,6 +26,8 @@ class NameMealViewController: UIViewController, UITextFieldDelegate, UINavigatio
         if let meal = meal {
             navigationItem.title = meal.name
             nameTextField.text = meal.name
+            photoImageView.image = meal.photo
+            ratingControl.rating = meal.rating
         }
         updateSaveButtonState()
     }
@@ -70,6 +72,25 @@ class NameMealViewController: UIViewController, UITextFieldDelegate, UINavigatio
     }
     
     //MARK: Actions
+    
+    @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
+        // Antes de nada ocultar el teclado
+        nameTextField.resignFirstResponder()
+        
+        // Instanciamos un image picker, que permite al usuario coger una foto de su galería
+        let imagePickerController = UIImagePickerController()
+        
+        // Sólo permitimos las imágenes de la galería, no que se abra la cámara
+        // Nota: .photoLibrary es equivalente a UIImagePickerControllerSourceType.photoLibrary
+        imagePickerController.sourceType = .photoLibrary
+        
+        // Establecemos el delegate, ya que el manejo de eventos lo haremos en nuestro propio ViewController
+        imagePickerController.delegate = self
+        
+        // Por último, mostramos el picker
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -83,6 +104,20 @@ class NameMealViewController: UIViewController, UITextFieldDelegate, UINavigatio
     func textFieldDidEndEditing(_ textField: UITextField) {
         updateSaveButtonState()
         navigationItem.title = textField.text
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        // El diccionario seleccionado contiene múltiples representaciones de la imagen. Nosotros la que queremos es la original. Como el acceso a un Dictionary devuelve un optional, hay que manejar correctamente la situación.
+        guard let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+            fatalError("Se esperaba un diccionario que tuviera una imagen, pero se encontró: \(info)")
+        }
+        
+        // Si hemos llegado aquí es que cuando el usuario ha seleccionado una imagen, todo ha ido bien.
+        // Establecemos la imagen en el ImageView
+        photoImageView.image = selectedImage
+        
+        // Por último cerrar el picker
+        dismiss(animated: true, completion: nil)
     }
     
     private func updateSaveButtonState() {

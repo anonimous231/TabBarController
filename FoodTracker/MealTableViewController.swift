@@ -120,8 +120,11 @@ class MealTableViewController: UITableViewController {
             os_log("Adding a new meal.", log: OSLog.default, type: .debug)
             
         case "ShowDetail":
-            guard let mealDetailViewController = segue.destination as? NameMealViewController else {
+            guard let tabBarController = segue.destination as? UITabBarController else {
                 fatalError("Unexpected destination: \(segue.destination)")
+            }
+            guard let mealDetailViewController = tabBarController.viewControllers?.first as? NameMealViewController else {
+                fatalError("Couldn't instantiate NameMealViewController from tabbar")
             }
             
             guard let selectedMealCell = sender as? MealTableViewCell else {

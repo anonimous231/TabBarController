@@ -76,14 +76,32 @@
                     <view key="view" contentMode="scaleToFill" id="jdB-em-kTU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ahJ-3e-Maj">
+                                <rect key="frame" x="8" y="84" width="359" height="414"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Q9A-iN-mNG">
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="414"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ahJ-3e-Maj" secondAttribute="height" multiplier="359:414" id="6L5-Z4-Rvt"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ahJ-3e-Maj" firstAttribute="top" secondItem="MLy-wS-Y4V" secondAttribute="top" constant="20" id="3nf-2X-1ro"/>
+                            <constraint firstItem="ahJ-3e-Maj" firstAttribute="leading" secondItem="MLy-wS-Y4V" secondAttribute="leading" constant="8" id="S0a-My-jnT"/>
+                            <constraint firstItem="MLy-wS-Y4V" firstAttribute="trailing" secondItem="ahJ-3e-Maj" secondAttribute="trailing" constant="8" id="iYW-fm-dew"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="MLy-wS-Y4V"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Foto" id="blc-G1-cAB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZZU-DP-yZg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2142" y="-1472"/>
+            <point key="canvasLocation" x="2141.5999999999999" y="-1472.1139430284859"/>
         </scene>
         <!--Valoración-->
         <scene sceneID="SxV-vX-C25">
@@ -92,6 +110,17 @@
                     <view key="view" contentMode="scaleToFill" id="a6w-GK-MpT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jjr-W1-h4S">
+                                <rect key="frame" x="16" y="86" width="252" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uzC-Qg-cfu" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="252" height="44"/>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="3Lb-1P-nWC"/>
                     </view>
@@ -110,23 +139,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iGQ-oq-fZs">
-                                <rect key="frame" x="7.5" y="84" width="359.5" height="361"/>
+                                <rect key="frame" x="8" y="84" width="360" height="30"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Introduce un nombre de comida" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qWx-nK-Os5">
-                                        <rect key="frame" x="0.0" y="0.0" width="359.5" height="361"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="360" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="iGQ-oq-fZs" firstAttribute="top" secondItem="NAj-2e-ckB" secondAttribute="top" constant="20" id="6FN-WJ-9qC"/>
-                            <constraint firstItem="NAj-2e-ckB" firstAttribute="trailing" secondItem="iGQ-oq-fZs" secondAttribute="trailing" constant="8" id="LSv-4E-kEX"/>
-                            <constraint firstItem="NAj-2e-ckB" firstAttribute="bottom" secondItem="iGQ-oq-fZs" secondAttribute="bottom" constant="173" id="YMB-n3-D70"/>
-                            <constraint firstItem="iGQ-oq-fZs" firstAttribute="leading" secondItem="NAj-2e-ckB" secondAttribute="leading" constant="7.5" id="tZh-Ro-yKM"/>
+                            <constraint firstItem="iGQ-oq-fZs" firstAttribute="centerX" secondItem="QhC-Cf-fk0" secondAttribute="centerX" id="opE-Ty-nOb"/>
+                            <constraint firstItem="iGQ-oq-fZs" firstAttribute="leading" secondItem="NAj-2e-ckB" secondAttribute="leading" constant="8" id="yix-Ak-XHu"/>
+                            <constraint firstItem="iGQ-oq-fZs" firstAttribute="top" secondItem="NAj-2e-ckB" secondAttribute="top" constant="20" id="zJl-J3-vyR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NAj-2e-ckB"/>
                     </view>
@@ -140,13 +168,13 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="2r2-GB-pls"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="nameTextField" destination="qWx-nK-Os5" id="2xt-xz-F9e"/>
-                        <outlet property="saveButton" destination="2r2-GB-pls" id="p1B-Ss-tDX"/>
+                        <outlet property="nameTextField" destination="qWx-nK-Os5" id="FyW-Xf-81w"/>
+                        <outlet property="saveButton" destination="2r2-GB-pls" id="KnH-qE-3yi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rxd-Ow-Z5l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1289" y="-2216"/>
+            <point key="canvasLocation" x="1289" y="-2211"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4EL-Sv-nrv">
@@ -160,8 +188,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="xua-OI-WpJ" kind="relationship" relationship="viewControllers" id="lij-aY-5cb"/>
-                        <segue destination="Rir-kW-ohc" kind="relationship" relationship="viewControllers" id="IFD-ms-CLT"/>
                         <segue destination="Iap-b8-fOw" kind="relationship" relationship="viewControllers" id="d1G-t8-u1j"/>
+                        <segue destination="Rir-kW-ohc" kind="relationship" relationship="viewControllers" id="IFD-ms-CLT"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rmv-Na-FjI" userLabel="First Responder" sceneMemberID="firstResponder"/>
