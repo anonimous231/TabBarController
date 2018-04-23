@@ -72,7 +72,7 @@
         <!--Foto-->
         <scene sceneID="hnA-QG-J1X">
             <objects>
-                <viewController id="Iap-b8-fOw" sceneMemberID="viewController">
+                <viewController id="Iap-b8-fOw" customClass="NameMealViewController" customModule="FoodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jdB-em-kTU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -98,6 +98,9 @@
                         <viewLayoutGuide key="safeArea" id="MLy-wS-Y4V"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Foto" id="blc-G1-cAB"/>
+                    <connections>
+                        <outlet property="photoImageView" destination="Q9A-iN-mNG" id="egI-7O-xuj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZZU-DP-yZg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -106,7 +109,7 @@
         <!--Valoración-->
         <scene sceneID="SxV-vX-C25">
             <objects>
-                <viewController id="Rir-kW-ohc" sceneMemberID="viewController">
+                <viewController id="Rir-kW-ohc" customClass="NameMealViewController" customModule="FoodTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a6w-GK-MpT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -125,10 +128,13 @@
                         <viewLayoutGuide key="safeArea" id="3Lb-1P-nWC"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Valoración" id="7VW-56-OC1"/>
+                    <connections>
+                        <outlet property="ratingControl" destination="uzC-Qg-cfu" id="JkF-Bc-Jci"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3gi-aW-kvI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1289" y="-889"/>
+            <point key="canvasLocation" x="2142" y="-739"/>
         </scene>
         <!--Nombre-->
         <scene sceneID="TMk-QT-0HC">
@@ -174,13 +180,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rxd-Ow-Z5l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1289" y="-2211"/>
+            <point key="canvasLocation" x="2142" y="-2230"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tabbar View Controller-->
         <scene sceneID="4EL-Sv-nrv">
             <objects>
-                <tabBarController id="9fj-fX-Gkk" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="DAg-W7-4WK"/>
+                <tabBarController id="9fj-fX-Gkk" customClass="tabbarViewController" customModule="FoodTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="DAg-W7-4WK">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="gvG-of-gSj"/>
+                    </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="X4V-9q-0qb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

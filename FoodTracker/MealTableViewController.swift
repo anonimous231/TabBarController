@@ -123,9 +123,10 @@ class MealTableViewController: UITableViewController {
             guard let tabBarController = segue.destination as? UITabBarController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
-            guard let mealDetailViewController = tabBarController.viewControllers?.first as? NameMealViewController else {
-                fatalError("Couldn't instantiate NameMealViewController from tabbar")
-            }
+            
+//            guard let mealDetailViewController = tabBarController.viewControllers?.first as? NameMealViewController else {
+//                fatalError("Couldn't instantiate NameMealViewController from tabbar")
+//            }
             
             guard let selectedMealCell = sender as? MealTableViewCell else {
                 fatalError("Unexpected sender: \(String(describing: sender))")
@@ -136,7 +137,13 @@ class MealTableViewController: UITableViewController {
             }
             
             let selectedMeal = meals[indexPath.row]
-            mealDetailViewController.meal = selectedMeal
+            for i in (tabBarController.viewControllers)!{
+                let nombre = i as? NameMealViewController
+                
+                nombre?.meal = selectedMeal
+            }
+            
+//            mealDetailViewController.meal = selectedMeal
             
         default:
             fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")

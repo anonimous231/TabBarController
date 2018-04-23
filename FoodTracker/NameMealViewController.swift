@@ -20,16 +20,23 @@ class NameMealViewController: UIViewController, UITextFieldDelegate, UIImagePick
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if(nameTextField != nil){
         nameTextField.delegate = self
-        
+        }
         if let meal = meal {
             navigationItem.title = meal.name
+            if(nameTextField != nil){
             nameTextField.text = meal.name
+            updateSaveButtonState()
+            }
+            if(photoImageView != nil){
             photoImageView.image = meal.photo
+            }
+            if(ratingControl != nil){
             ratingControl.rating = meal.rating
+            }
         }
-        updateSaveButtonState()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,6 +76,8 @@ class NameMealViewController: UIViewController, UITextFieldDelegate, UIImagePick
         let rating = ratingControl.rating
         
         meal = Meal(name: name!, photo: photo, rating: rating)
+        
+        
     }
     
     //MARK: Actions
