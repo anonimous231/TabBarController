@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32839725208F282700C2A9C3 /* ClassStaticSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32839724208F282700C2A9C3 /* ClassStaticSave.swift */; };
 		329CBE23208668AB004FA704 /* NameMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329CBE22208668AB004FA704 /* NameMealViewController.swift */; };
 		32BA2888208DFA5100BFFC88 /* tabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BA2887208DFA5100BFFC88 /* tabbarViewController.swift */; };
 		8233E33E201F6335005FF923 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8233E33D201F6335005FF923 /* RatingControl.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		32839724208F282700C2A9C3 /* ClassStaticSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassStaticSave.swift; sourceTree = "<group>"; };
 		329CBE22208668AB004FA704 /* NameMealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameMealViewController.swift; sourceTree = "<group>"; };
 		32BA2887208DFA5100BFFC88 /* tabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabbarViewController.swift; sourceTree = "<group>"; };
 		8233E33D201F6335005FF923 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				827EAE872020A4E8006216B8 /* Meal.swift */,
 				827E216A2031DDB900027AD1 /* MealTableViewCell.swift */,
 				827E216C2032DF0B00027AD1 /* MealTableViewController.swift */,
+				32839724208F282700C2A9C3 /* ClassStaticSave.swift */,
 			);
 			path = FoodTracker;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32839725208F282700C2A9C3 /* ClassStaticSave.swift in Sources */,
 				32BA2888208DFA5100BFFC88 /* tabbarViewController.swift in Sources */,
 				827EAE882020A4E8006216B8 /* Meal.swift in Sources */,
 				82EE78BD200CD38C005FEBED /* MealViewController.swift in Sources */,

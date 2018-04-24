@@ -31,5 +31,13 @@ class tabbarViewController: UITabBarController {
         // Pass the selected object to the new view controller.
     }
     
+    //MARK: Methods
+    
+    @IBAction func SaveTap(_ sender: Any) {
+        
+        ClassStaticSave.meals.remove(at: (ClassStaticSave.newMeal?.index)!)
+        ClassStaticSave.meals.insert(ClassStaticSave.newMeal!, at: (ClassStaticSave.newMeal?.index)!)
+    }
+    
 
 }

@@ -36,8 +36,7 @@ class Meal: NSObject, NSCoding  {
     var name: String
     var photo: UIImage? // Es un optional porque lo mismo la comida no tiene foto asignada
     var rating: Int
-    
-    
+    var index: Int
     
     //MARK: Archiving Paths
     

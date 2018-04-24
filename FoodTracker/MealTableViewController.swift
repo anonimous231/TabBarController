@@ -12,7 +12,7 @@ import os.log
 class MealTableViewController: UITableViewController {
     
     // MARK: Properties
-    var meals = [Meal]()
+//    var meals = [Meal]()
 
     
     
@@ -23,12 +23,18 @@ class MealTableViewController: UITableViewController {
         navigationItem.leftBarButtonItem = editButtonItem
         
         if let savedMeals = loadMeals() {
-            meals += savedMeals
+           ClassStaticSave.meals += savedMeals
         }
         else {
             // Load the sample data.
             loadSampleMeals()
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("viewWillAppear >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,7 +50,7 @@ class MealTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return meals.count
+        return ClassStaticSave.meals.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -58,7 +64,7 @@ class MealTableViewController: UITableViewController {
         }
         
         // Hay que obtener la comida correcta del array
-        let meal = meals[indexPath.row]
+        let meal = ClassStaticSave.meals[indexPath.row]
         
         // Establecer los datos a mostrar en la vista
         cell.nameLabel.text = meal.name
@@ -81,7 +87,7 @@ class MealTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            meals.remove(at: indexPath.row)
+            ClassStaticSave.meals.remove(at: indexPath.row)
             saveMeals()
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
@@ -136,7 +142,7 @@ class MealTableViewController: UITableViewController {
                 fatalError("The selected cell is not being displayed by the table")
             }
             
-            let selectedMeal = meals[indexPath.row]
+            let selectedMeal = ClassStaticSave.meals[indexPath.row]
             for i in (tabBarController.viewControllers)!{
                 let nombre = i as? NameMealViewController
                 
@@ -157,7 +163,7 @@ class MealTableViewController: UITableViewController {
             
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
                 // Update an existing meal.
-                meals[selectedIndexPath.row] = meal
+                ClassStaticSave.meals[selectedIndexPath.row] = meal
                 tableView.reloadRows(at: [selectedIndexPath], with: .none)
             }
             else {
@@ -165,9 +171,9 @@ class MealTableViewController: UITableViewController {
                 
                 
                 // Add a new meal.
-                let newIndexPath = IndexPath(row: meals.count, section: 0)
+                let newIndexPath = IndexPath(row: ClassStaticSave.meals.count, section: 0)
                 
-                meals.append(meal)
+                ClassStaticSave.meals.append(meal)
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
             // Save the meals.
@@ -195,14 +201,14 @@ class MealTableViewController: UITableViewController {
         }
         
         // Una vez creadas correctamente, se insertan en el array
-        meals += [meal1, meal2, meal3]
+        ClassStaticSave.meals += [meal1, meal2, meal3]
     
     }
     
     
     
     private func saveMeals() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(meals, toFile: Meal.ArchiveURL.path)
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(ClassStaticSave.meals, toFile: Meal.ArchiveURL.path)
         if isSuccessfulSave {
             os_log("Meals successfully saved.", log: OSLog.default, type: .debug)
         } else {
