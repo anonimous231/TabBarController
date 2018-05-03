@@ -2,8 +2,8 @@
 //  tabbarViewController.swift
 //  FoodTracker
 //
-//  Created by José Ángel on 23/4/18.
-//  Copyright © 2018 José Negrillo. All rights reserved.
+//  Created by Anonymous on 23/4/18.
+//  Copyright © 2018 Anonymous. All rights reserved.
 //
 
 import UIKit
@@ -33,11 +33,11 @@ class tabbarViewController: UITabBarController {
     
     //MARK: Methods
     
-    @IBAction func SaveTap(_ sender: Any) {
-        
-        ClassStaticSave.meals.remove(at: (ClassStaticSave.newMeal?.index)!)
-        ClassStaticSave.meals.insert(ClassStaticSave.newMeal!, at: (ClassStaticSave.newMeal?.index)!)
-    }
+//    @IBAction func SaveTap(_ sender: Any) {
+//        
+//        ClassStaticSave.meals.remove(at: (ClassStaticSave.newMeal?.index)!)
+//        ClassStaticSave.meals.insert(ClassStaticSave.newMeal!, at: (ClassStaticSave.newMeal?.index)!)
+//    }
     
 
 }

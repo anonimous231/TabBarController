@@ -28,7 +28,7 @@ class Meal: NSObject, NSCoding  {
         let rating = aDecoder.decodeInteger(forKey: PropertyKey.rating)
         
         // Must call designated initializer.
-        self.init(name: name, photo: photo, rating: rating)
+        self.init(name: name, photo: photo, rating: rating, index: 0)
     }
     
     
@@ -51,7 +51,7 @@ class Meal: NSObject, NSCoding  {
         static let rating = "rating"
     }
     // MARK: Initializers
-    init?(name: String, photo: UIImage?, rating: Int) {
+    init?(name: String, photo: UIImage?, rating: Int, index: Int) {
         
         // Si el nombre o la valoración no son válidos, devuelvo nulo
         if (name.isEmpty || rating < 0 || rating > 5) {
@@ -61,6 +61,7 @@ class Meal: NSObject, NSCoding  {
         self.name = name
         self.photo = photo
         self.rating = rating
+        self.index = 0
     }
     
 }

@@ -72,8 +72,9 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         let name = nameTextField.text ?? "" // Si no hay nada en el text field, asigno una cadena vacía
         let photo = photoImageView.image
         let rating = ratingControl.rating
+        let index = 0
     
-        meal = Meal(name: name, photo: photo, rating: rating)
+        meal = Meal(name: name, photo: photo, rating: rating, index: index)
         
     }
     

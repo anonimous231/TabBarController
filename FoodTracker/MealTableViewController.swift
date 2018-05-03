@@ -188,15 +188,15 @@ class MealTableViewController: UITableViewController {
         let photo2 = UIImage(named: "meal2")
         let photo3 = UIImage(named: "meal3")
     
-        guard let meal1 = Meal(name: "Ensalada Caprese", photo: photo1, rating: 4) else {
+        guard let meal1 = Meal(name: "Ensalada Caprese", photo: photo1, rating: 4, index: 0) else {
             fatalError("No se puede instanciar meal1")
         }
         
-        guard let meal2 = Meal(name: "Pollo con patatas", photo: photo2, rating: 5) else {
+        guard let meal2 = Meal(name: "Pollo con patatas", photo: photo2, rating: 5, index: 0) else {
             fatalError("No se puede instanciar meal2")
         }
         
-        guard let meal3 = Meal(name: "Pasta con albóndigas", photo: photo3, rating: 3) else {
+        guard let meal3 = Meal(name: "Pasta con albóndigas", photo: photo3, rating: 3, index: 0) else {
             fatalError("No se puede instanciar meal3")
         }
         

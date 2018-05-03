@@ -59,7 +59,7 @@ class NameMealViewController: UIViewController, UITextFieldDelegate, UIImagePick
             owningNavigationController.popViewController(animated: true)
         }
         else {
-            fatalError("Joder, que no vale")
+            fatalError("Error Fatal durante la ejecución")
         }
     }
     
@@ -74,8 +74,9 @@ class NameMealViewController: UIViewController, UITextFieldDelegate, UIImagePick
         let name = nameTextField.text
         let photo = photoImageView.image
         let rating = ratingControl.rating
+        let index = 0
         
-        meal = Meal(name: name!, photo: photo, rating: rating)
+        meal = Meal(name: name!, photo: photo, rating: rating, index: index)
         
         
     }
